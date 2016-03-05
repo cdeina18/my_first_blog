@@ -3,17 +3,19 @@
     <title>BIENVENIDOS A MI PAGINA</title>
   </head>
   <body>
-    <div>
+      <div>
       <h1>MI BLOG</h1>
     </div>
+    {% for post in posts %}
     <div>
-      <p>05/03/2016</p>
+      <p>publicado el: {{post.published_date}}</p>
       <h2>
-        <a href="#">        
-        TITULO
+        <a href="#">
+        {{post.title}}
         </a>
       </h2>
-      <p>CONTENIDO</p>
+      <p>{{post.text|linebreaks}}</p>
     </div>
+    {% endfor %}
   </body>
 </html>
